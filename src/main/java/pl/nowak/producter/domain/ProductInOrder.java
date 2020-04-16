@@ -3,7 +3,6 @@ package pl.nowak.producter.domain;
 import lombok.Data;
 
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,9 +15,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "product_in_order")
 public class ProductInOrder {
-
-//    @EmbeddedId
-//    private ProductInOrderId productInOrderId;
 
     @Id
     @SequenceGenerator(name = "seq_product_in_order", sequenceName = "seq_product_in_order", allocationSize = 1)
