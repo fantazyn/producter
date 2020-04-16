@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: dev
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    username: producter
+    password: secret
+    url: jdbc:postgresql://localhost:5432/producter
+
+logging:
+  level:
+    ROOT: INFO
+    pl.nowak.producter: DEBUG
+

@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: producter
+  profiles:
+    active: local
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    hikari:
+      maximum-pool-size: 36
+      pool-name: producter
+    driver-class-name: org.postgresql.Driver
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  output:
+    ansi:
+      enabled: DETECT
+  jackson:
+    mapper:
+      default_view_inclusion: true
+    time-zone: GMT
+
+server:
+  address: 0.0.0.0
+  port: 8888
+  servlet:
+    context-path: /api/v1
+  error:
+    whitelabel:
+      enabled: false
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/xml,text/plain

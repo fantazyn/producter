@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "3bf36c58-ba85-45be-bf00-6b218eb85870",
+		"name": "product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/api/v1/order?startDate=2000-10-31T01:30:00.000-05:00&endDate=2030-10-31T01:30:00.000-05:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"order"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2000-10-31T01:30:00.000-05:00"
+						},
+						{
+							"key": "endDate",
+							"value": "2030-10-31T01:30:00.000-05:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"name\": \"pro2\",\r\n  \"price\": 10,\r\n  \"sku\": \"123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/v1/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"buyerEmail\": \"andrzej@test.pl\",\r\n  \"products\": \r\n  {\r\n  \t\t\"123\": 3,\r\n\t\t\"124\": 2\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/v1/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit Product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"name\": \"andrzejtest\",\r\n  \"price\": 99,\r\n  \"sku\": \"123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/v1/product/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"name\": \"andrzejtest\",\r\n  \"price\": 99,\r\n  \"sku\": \"123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/v1/product/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"123"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
